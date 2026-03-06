@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Online Sederhana</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#ff6a00;
+color:white;
+padding:15px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.container{
+width:90%;
+margin:auto;
+margin-top:20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+padding:15px;
+transition:0.2s;
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+}
+
+.price{
+color:#ff6a00;
+font-weight:bold;
+margin:5px 0;
+}
+
+button{
+background:#ff6a00;
+border:none;
+padding:10px;
+color:white;
+width:100%;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e55d00;
+}
+
+.order{
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+input, select, textarea{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:15px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+footer{
+text-align:center;
+margin-top:30px;
+padding:20px;
+color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+TOKO ONLINE SEDERHANA
+</header>
+
+<div class="container">
+
+<h2>Daftar Produk</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512499617640-c2f999098c01">
+<h3>Sepatu Sneakers</h3>
+<p class="price">Rp 350.000</p>
+<p>Sepatu sneakers stylish dan nyaman untuk aktivitas sehari hari.</p>
+<button onclick="pilihProduk('Sepatu Sneakers')">Pesan</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+<h3>Smartphone Android</h3>
+<p class="price">Rp 2.500.000</p>
+<p>Smartphone dengan performa cepat dan kamera jernih.</p>
+<button onclick="pilihProduk('Smartphone Android')">Pesan</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
+<h3>Headphone</h3>
+<p class="price">Rp 450.000</p>
+<p>Headphone dengan suara jernih dan bass kuat.</p>
+<button onclick="pilihProduk('Headphone')">Pesan</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+<h3>Jam Tangan</h3>
+<p class="price">Rp 275.000</p>
+<p>Jam tangan elegan cocok untuk pria dan wanita.</p>
+<button onclick="pilihProduk('Jam Tangan')">Pesan</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+<h3>Sepatu Olahraga</h3>
+<p class="price">Rp 420.000</p>
+<p>Sepatu olahraga ringan dan nyaman untuk lari.</p>
+<button onclick="pilihProduk('Sepatu Olahraga')">Pesan</button>
+</div>
+
+</div>
+
+<div class="order">
+
+<h2>Form Pemesanan</h2>
+
+<form>
+
+<label>Nama Pembeli</label>
+<input type="text" placeholder="Masukkan nama">
+
+<label>Produk</label>
+<select id="produk">
+<option>Sepatu Sneakers</option>
+<option>Smartphone Android</option>
+<option>Headphone</option>
+<option>Jam Tangan</option>
+<option>Sepatu Olahraga</option>
+</select>
+
+<label>Jumlah</label>
+<input type="number" placeholder="Jumlah pesanan">
+
+<label>Alamat Pengiriman</label>
+<textarea placeholder="Masukkan alamat lengkap"></textarea>
+
+<button type="submit">Kirim Pesanan</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Toko Online Sederhana
+</footer>
+
+<script>
+
+function pilihProduk(nama){
+document.getElementById("produk").value = nama
+window.scrollTo({
+top: document.querySelector(".order").offsetTop,
+behavior: "smooth"
+})
+}
+
+</script>
+
+</body>
+</html>
